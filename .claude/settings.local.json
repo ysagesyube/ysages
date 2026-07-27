@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__050bdc07-0423-4b8a-9f13-9ef7bd2281a4__netlify-project-services-reader"
+    ]
+  }
+}
