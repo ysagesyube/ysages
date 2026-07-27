@@ -40,7 +40,43 @@
   .nav-links a:hover{opacity:1;color:var(--urucum)}
   .nav-cta{font-size:9px;letter-spacing:.28em;text-transform:uppercase;border:1px solid rgba(232,221,204,0.5);padding:6px 14px;transition:all .2s}
   .nav-cta:hover{background:var(--areia);color:var(--jenipapo)}
-  @media (max-width:1100px){.nav-links{display:none}.nav-cta{display:none}}
+
+  .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:34px;height:34px;padding:0;background:none;border:0;cursor:pointer;flex-shrink:0}
+  .nav-toggle span{display:block;width:100%;height:1px;background:var(--areia);transition:transform .25s ease,opacity .25s ease}
+
+  @media (max-width:1100px){
+    .nav .row{gap:14px}
+    .nav-toggle{display:flex;margin-left:6px}
+
+    /* .nav has backdrop-filter, which makes it the containing block for
+       fixed descendants — so these are positioned with top/height in
+       viewport units instead of inset/bottom, which would resolve
+       against .nav's own (collapsed) box instead of the viewport. */
+    .nav-links{
+      position:fixed;top:0;left:0;right:0;height:100vh;z-index:90;
+      display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;
+      padding:0 32px;background:var(--jenipapo);
+      font-size:15px;letter-spacing:.22em;
+      opacity:0;visibility:hidden;pointer-events:none;
+      transition:opacity .25s ease,visibility .25s ease;
+    }
+    .nav-links a{opacity:1}
+
+    .nav-cta{
+      position:fixed;left:32px;top:calc(100vh - 96px);z-index:91;
+      opacity:0;visibility:hidden;pointer-events:none;
+      transition:opacity .25s ease,visibility .25s ease;
+    }
+
+    .nav.is-open .nav-links,
+    .nav.is-open .nav-cta{opacity:1;visibility:visible;pointer-events:auto}
+
+    .nav.is-open .nav-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .nav.is-open .nav-toggle span:nth-child(2){opacity:0}
+    .nav.is-open .nav-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  }
+
+  body.nav-open{overflow:hidden}
 
   /* HERO */
   .hero{
