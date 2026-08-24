@@ -75,7 +75,6 @@
       </g></svg>
     </div>
     <div class="nav-links">
-      <a href="#nome">The Name</a>
       <a href="#manifesto">Manifesto</a>
       <a href="#pilares">Pillars</a>
       <a href="#hierarquia">Hierarchy</a>
@@ -156,48 +155,6 @@
 </section>
 
 <!-- O NOME -->
-<section class="block" id="nome">
-  <div class="container">
-    <div class="section-eyebrow reveal">§ II · The Name</div>
-    <h2 class="section-title reveal">Two readings. One single name.</h2>
-    <p class="section-lead reveal">
-      YSAGES carries two complementary readings that express the essence of the organization.
-      Between the sages and the ages there is a bridge: cultural transmission. This is where YSAGES operates.
-    </p>
-
-    <div class="nome-wrap">
-      <div class="nome-card reveal">
-        <h3 class="nome-key">Y·SAGES</h3>
-        <div class="en">"The Sages"</div>
-        <div class="pt">Os Sábios</div>
-        <p>
-          Represents the elders, masters, knowledge guardians, educators and transmitters who
-          keep humanity's cultures alive. Every living culture has its own sages.
-        </p>
-        <div style="margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-family:var(--display);font-size:16px;letter-spacing:.06em;opacity:.7;font-style:italic">
-          Those who sustain continuity.
-        </div>
-      </div>
-      <div class="nome-card reveal">
-        <h3 class="nome-key">YS·AGES</h3>
-        <div class="en">"Through the Ages"</div>
-        <div class="pt">Através das Eras</div>
-        <p>
-          Represents continuity through time. Crossing generations, preserving identities,
-          transmitting knowledge. YSAGES represents what stays alive through the ages.
-        </p>
-        <div style="margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-family:var(--display);font-size:16px;letter-spacing:.06em;opacity:.7;font-style:italic">
-          The time of continuity.
-        </div>
-      </div>
-    </div>
-
-    <div class="nome-bridge reveal">
-      Between the sages and the ages there is a bridge: <span class="accent">cultural transmission.</span>
-    </div>
-  </div>
-</section>
-
 <!-- MANIFESTO -->
 <section class="block manifesto" id="manifesto">
   <div class="container">
@@ -485,12 +442,12 @@
       </div>
 
       <div class="nucleo reveal">
-        <div class="tag">Nucleus · Paraguay</div>
-        <h3>YGUARAI</h3>
-        <div class="sub">Guarani Nucleus</div>
+        <div class="tag">Nucleus · Amazon</div>
+        <h3>NOKE KOIN</h3>
+        <div class="sub">Noke Koĩ Nucleus</div>
         <div class="field">
           <div class="lbl">Archive</div>
-          <div class="val">294 words archived</div>
+          <div class="val">1632 words archived</div>
         </div>
       </div>
     </div>
@@ -509,7 +466,6 @@
     </div>
     <div class="cta-actions">
       <a href="#contato" class="btn primary">Connect with us</a>
-      <a href="brand-book.html" class="btn">Brand book</a>
     </div>
   </div>
 </section>
@@ -521,13 +477,15 @@
     <h2 class="section-title reveal">Let's talk.</h2>
 
     <div class="contato-grid">
-      <form class="contato-form" onsubmit="event.preventDefault();var f=this;var nome=(f.querySelector('input[type=text]')||{}).value||'';var em=(f.querySelector('input[type=email]')||{}).value||'';var org=(f.querySelectorAll('input[type=text]')[1]||{}).value||'';var nat=(f.querySelector('select')||{}).value||'';var msg=(f.querySelector('textarea')||{}).value||'';var subj='YSAGES · '+(nat||'Contact')+(nome?' · '+nome:'');var body='Name: '+nome+'%0D%0AEmail: '+em+'%0D%0AOrganization: '+org+'%0D%0ANature: '+nat+'%0D%0A%0D%0AMessage:%0D%0A'+msg;window.location.href='mailto:ysages@ysages.com?subject='+encodeURIComponent(subj)+'&amp;body='+body;f.querySelector('button').textContent='OPENING EMAIL ✓';">
-        <div class="field"><label>Name</label><input type="text" placeholder="How can we call you"></div>
-        <div class="field"><label>Email</label><input type="email" placeholder="your@email.org"></div>
-        <div class="field"><label>Organization or community (optional)</label><input type="text" placeholder="Your organization"></div>
+      <form class="contato-form" name="contact" method="POST" action="/#contato" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp-field" hidden><label>Leave this field blank: <input name="bot-field" autocomplete="off" tabindex="-1"></label></p>
+        <div class="field"><label>Name</label><input type="text" name="name" placeholder="How can we call you"></div>
+        <div class="field"><label>Email</label><input type="email" name="email" placeholder="your@email.org"></div>
+        <div class="field"><label>Organization or community (optional)</label><input type="text" name="organization" placeholder="Your organization"></div>
         <div class="field">
           <label>Nature of the message</label>
-          <select style="background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--areia);font-family:var(--body);font-size:16px;padding:12px 0;letter-spacing:.04em;outline:none">
+          <select name="subject" style="background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--areia);font-family:var(--body);font-size:16px;padding:12px 0;letter-spacing:.04em;outline:none">
             <option style="background:var(--jenipapo)">Institutional partnership</option>
             <option style="background:var(--jenipapo)">Dialogue with a guardian community</option>
             <option style="background:var(--jenipapo)">Academic research</option>
@@ -535,7 +493,7 @@
             <option style="background:var(--jenipapo)">Other</option>
           </select>
         </div>
-        <div class="field"><label>How can we collaborate?</label><textarea placeholder="Tell us briefly about your proposal, question or request."></textarea></div>
+        <div class="field"><label>How can we collaborate?</label><textarea name="message" placeholder="Tell us briefly about your proposal, question or request."></textarea></div>
         <button type="submit" class="btn primary" style="align-self:flex-start">Send message</button>
       </form>
 
@@ -578,10 +536,8 @@
         <h6>Institutional</h6>
         <ul>
           <li><a href="#quem">Who we are</a></li>
-          <li><a href="#nome">The name</a></li>
           <li><a href="#manifesto">Manifesto</a></li>
           <li><a href="#pmv">Purpose · Mission · Vision</a></li>
-          
         </ul>
       </div>
       <div class="ft-col">
@@ -597,8 +553,6 @@
       <div class="ft-col">
         <h6>Resources</h6>
         <ul>
-          <li><a href="brand-book.html">Visual brand book</a></li>
-          <li><a href="brand-book-institucional.html">Institutional brand book</a></li>
           <li><a href="#contato">Contact</a></li>
           <li><a href="#">Press</a></li>
           <li><a href="#">Careers</a></li>
@@ -666,7 +620,6 @@
       </g></svg>
     </div>
     <div class="nav-links">
-      <a href="#nome">O Nome</a>
       <a href="#manifesto">Manifesto</a>
       <a href="#pilares">Pilares</a>
       <a href="#hierarquia">Hierarquia</a>
@@ -747,48 +700,6 @@
 </section>
 
 <!-- O NOME -->
-<section class="block" id="nome">
-  <div class="container">
-    <div class="section-eyebrow reveal">§ II · O Nome</div>
-    <h2 class="section-title reveal">Duas leituras. Um único nome.</h2>
-    <p class="section-lead reveal">
-      YSAGES carrega duas leituras complementares que expressam a essência da organização.
-      Entre os sábios e as eras existe uma ponte: a transmissão cultural. É nesse espaço que a YSAGES atua.
-    </p>
-
-    <div class="nome-wrap">
-      <div class="nome-card reveal">
-        <h3 class="nome-key">Y·SAGES</h3>
-        <div class="en">"The Sages"</div>
-        <div class="pt">Os Sábios</div>
-        <p>
-          Representa os anciãos, mestres, guardiões do saber, educadores e transmissores que
-          mantêm vivas as culturas da humanidade. Toda cultura viva possui seus próprios sábios.
-        </p>
-        <div style="margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-family:var(--display);font-size:16px;letter-spacing:.06em;opacity:.7;font-style:italic">
-          Quem sustenta a continuidade.
-        </div>
-      </div>
-      <div class="nome-card reveal">
-        <h3 class="nome-key">YS·AGES</h3>
-        <div class="en">"Through the Ages"</div>
-        <div class="pt">Através das Eras</div>
-        <p>
-          Representa a continuidade ao longo do tempo. Atravessar gerações, preservar identidades,
-          transmitir conhecimentos. YSAGES representa aquilo que permanece vivo através das eras.
-        </p>
-        <div style="margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-family:var(--display);font-size:16px;letter-spacing:.06em;opacity:.7;font-style:italic">
-          O tempo da continuidade.
-        </div>
-      </div>
-    </div>
-
-    <div class="nome-bridge reveal">
-      Entre os sábios e as eras existe uma ponte: <span class="accent">a transmissão cultural.</span>
-    </div>
-  </div>
-</section>
-
 <!-- MANIFESTO -->
 <section class="block manifesto" id="manifesto">
   <div class="container">
@@ -1076,12 +987,12 @@
       </div>
 
       <div class="nucleo reveal">
-        <div class="tag">Núcleo · Paraguai</div>
-        <h3>YGUARAI</h3>
-        <div class="sub">Núcleo Guarani</div>
+        <div class="tag">Núcleo · Amazônia</div>
+        <h3>NOKE KOIN</h3>
+        <div class="sub">Núcleo Noke Koĩ</div>
         <div class="field">
           <div class="lbl">Acervo</div>
-          <div class="val">294 palavras arquivadas</div>
+          <div class="val">1632 palavras arquivadas</div>
         </div>
       </div>
     </div>
@@ -1100,7 +1011,6 @@
     </div>
     <div class="cta-actions">
       <a href="#contato" class="btn primary">Conecte-se conosco</a>
-      <a href="brand-book.html" class="btn">Brand book</a>
     </div>
   </div>
 </section>
@@ -1112,13 +1022,15 @@
     <h2 class="section-title reveal">Vamos conversar.</h2>
 
     <div class="contato-grid">
-      <form class="contato-form" onsubmit="event.preventDefault();var f=this;var nome=(f.querySelector('input[type=text]')||{}).value||'';var em=(f.querySelector('input[type=email]')||{}).value||'';var org=(f.querySelectorAll('input[type=text]')[1]||{}).value||'';var nat=(f.querySelector('select')||{}).value||'';var msg=(f.querySelector('textarea')||{}).value||'';var subj='YSAGES · '+(nat||'Contato')+(nome?' · '+nome:'');var body='Nome: '+nome+'%0D%0AE-mail: '+em+'%0D%0AOrganização: '+org+'%0D%0ANatureza: '+nat+'%0D%0A%0D%0AMensagem:%0D%0A'+msg;window.location.href='mailto:ysages@ysages.com?subject='+encodeURIComponent(subj)+'&amp;body='+body;f.querySelector('button').textContent='ABRINDO E-MAIL ✓';">
-        <div class="field"><label>Nome</label><input type="text" placeholder="Como podemos te chamar"></div>
-        <div class="field"><label>E-mail</label><input type="email" placeholder="seu@email.org"></div>
-        <div class="field"><label>Organização ou comunidade (opcional)</label><input type="text" placeholder="Sua organização"></div>
+      <form class="contato-form" name="contact" method="POST" action="/#contato" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp-field" hidden><label>Não preencha este campo: <input name="bot-field" autocomplete="off" tabindex="-1"></label></p>
+        <div class="field"><label>Nome</label><input type="text" name="name" placeholder="Como podemos te chamar"></div>
+        <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.org"></div>
+        <div class="field"><label>Organização ou comunidade (opcional)</label><input type="text" name="organization" placeholder="Sua organização"></div>
         <div class="field">
           <label>Natureza da mensagem</label>
-          <select style="background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--areia);font-family:var(--body);font-size:16px;padding:12px 0;letter-spacing:.04em;outline:none">
+          <select name="subject" style="background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--areia);font-family:var(--body);font-size:16px;padding:12px 0;letter-spacing:.04em;outline:none">
             <option style="background:var(--jenipapo)">Parceria institucional</option>
             <option style="background:var(--jenipapo)">Diálogo com comunidade guardiã</option>
             <option style="background:var(--jenipapo)">Pesquisa acadêmica</option>
@@ -1126,7 +1038,7 @@
             <option style="background:var(--jenipapo)">Outro</option>
           </select>
         </div>
-        <div class="field"><label>Como podemos colaborar?</label><textarea placeholder="Conte-nos brevemente sua proposta, dúvida ou pedido."></textarea></div>
+        <div class="field"><label>Como podemos colaborar?</label><textarea name="message" placeholder="Conte-nos brevemente sua proposta, dúvida ou pedido."></textarea></div>
         <button type="submit" class="btn primary" style="align-self:flex-start">Enviar mensagem</button>
       </form>
 
@@ -1169,10 +1081,8 @@
         <h6>Institucional</h6>
         <ul>
           <li><a href="#quem">Quem somos</a></li>
-          <li><a href="#nome">O nome</a></li>
           <li><a href="#manifesto">Manifesto</a></li>
           <li><a href="#pmv">Propósito · Missão · Visão</a></li>
-          
         </ul>
       </div>
       <div class="ft-col">
@@ -1188,8 +1098,6 @@
       <div class="ft-col">
         <h6>Recursos</h6>
         <ul>
-          <li><a href="brand-book.html">Brand book visual</a></li>
-          <li><a href="brand-book-institucional.html">Brand book institucional</a></li>
           <li><a href="#contato">Contato</a></li>
           <li><a href="#">Imprensa</a></li>
           <li><a href="#">Carreiras</a></li>
@@ -1256,7 +1164,6 @@
       </g></svg>
     </div>
     <div class="nav-links">
-      <a href="#nome">El Nombre</a>
       <a href="#manifesto">Manifiesto</a>
       <a href="#pilares">Pilares</a>
       <a href="#hierarquia">Jerarquía</a>
@@ -1337,48 +1244,6 @@
 </section>
 
 <!-- O NOME -->
-<section class="block" id="nome">
-  <div class="container">
-    <div class="section-eyebrow reveal">§ II · El Nombre</div>
-    <h2 class="section-title reveal">Dos lecturas. Un único nombre.</h2>
-    <p class="section-lead reveal">
-      YSAGES lleva dos lecturas complementarias que expresan la esencia de la organización.
-      Entre los sabios y las eras existe un puente: la transmisión cultural. Es en ese espacio donde opera YSAGES.
-    </p>
-
-    <div class="nome-wrap">
-      <div class="nome-card reveal">
-        <h3 class="nome-key">Y·SAGES</h3>
-        <div class="en">"The Sages"</div>
-        <div class="pt">Los Sabios</div>
-        <p>
-          Representa a los ancianos, maestros, guardianes del saber, educadores y transmisores que
-          mantienen vivas las culturas de la humanidad. Toda cultura viva tiene sus propios sabios.
-        </p>
-        <div style="margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-family:var(--display);font-size:16px;letter-spacing:.06em;opacity:.7;font-style:italic">
-          Quienes sostienen la continuidad.
-        </div>
-      </div>
-      <div class="nome-card reveal">
-        <h3 class="nome-key">YS·AGES</h3>
-        <div class="en">"Through the Ages"</div>
-        <div class="pt">A Través de las Eras</div>
-        <p>
-          Representa la continuidad a lo largo del tiempo. Atravesar generaciones, preservar identidades,
-          transmitir conocimientos. YSAGES representa lo que permanece vivo a través de las eras.
-        </p>
-        <div style="margin-top:auto;padding-top:24px;border-top:1px solid var(--line);font-family:var(--display);font-size:16px;letter-spacing:.06em;opacity:.7;font-style:italic">
-          El tiempo de la continuidad.
-        </div>
-      </div>
-    </div>
-
-    <div class="nome-bridge reveal">
-      Entre los sabios y las eras existe un puente: <span class="accent">la transmisión cultural.</span>
-    </div>
-  </div>
-</section>
-
 <!-- MANIFESTO -->
 <section class="block manifesto" id="manifesto">
   <div class="container">
@@ -1666,12 +1531,12 @@
       </div>
 
       <div class="nucleo reveal">
-        <div class="tag">Núcleo · Paraguay</div>
-        <h3>YGUARAI</h3>
-        <div class="sub">Núcleo Guaraní</div>
+        <div class="tag">Núcleo · Amazonía</div>
+        <h3>NOKE KOIN</h3>
+        <div class="sub">Núcleo Noke Koĩ</div>
         <div class="field">
           <div class="lbl">Acervo</div>
-          <div class="val">294 palabras archivadas</div>
+          <div class="val">1632 palabras archivadas</div>
         </div>
       </div>
     </div>
@@ -1690,7 +1555,6 @@
     </div>
     <div class="cta-actions">
       <a href="#contato" class="btn primary">Conéctese con nosotros</a>
-      <a href="brand-book.html" class="btn">Brand book</a>
     </div>
   </div>
 </section>
@@ -1702,13 +1566,15 @@
     <h2 class="section-title reveal">Conversemos.</h2>
 
     <div class="contato-grid">
-      <form class="contato-form" onsubmit="event.preventDefault();var f=this;var nome=(f.querySelector('input[type=text]')||{}).value||'';var em=(f.querySelector('input[type=email]')||{}).value||'';var org=(f.querySelectorAll('input[type=text]')[1]||{}).value||'';var nat=(f.querySelector('select')||{}).value||'';var msg=(f.querySelector('textarea')||{}).value||'';var subj='YSAGES · '+(nat||'Contacto')+(nome?' · '+nome:'');var body='Nombre: '+nome+'%0D%0ACorreo: '+em+'%0D%0AOrganización: '+org+'%0D%0ANaturaleza: '+nat+'%0D%0A%0D%0AMensaje:%0D%0A'+msg;window.location.href='mailto:ysages@ysages.com?subject='+encodeURIComponent(subj)+'&amp;body='+body;f.querySelector('button').textContent='ABRIENDO CORREO ✓';">
-        <div class="field"><label>Nombre</label><input type="text" placeholder="Cómo podemos llamarte"></div>
-        <div class="field"><label>Correo</label><input type="email" placeholder="su@correo.org"></div>
-        <div class="field"><label>Organización o comunidad (opcional)</label><input type="text" placeholder="Su organización"></div>
+      <form class="contato-form" name="contact" method="POST" action="/#contato" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp-field" hidden><label>Deje este campo en blanco: <input name="bot-field" autocomplete="off" tabindex="-1"></label></p>
+        <div class="field"><label>Nombre</label><input type="text" name="name" placeholder="Cómo podemos llamarte"></div>
+        <div class="field"><label>Correo</label><input type="email" name="email" placeholder="su@correo.org"></div>
+        <div class="field"><label>Organización o comunidad (opcional)</label><input type="text" name="organization" placeholder="Su organización"></div>
         <div class="field">
           <label>Naturaleza del mensaje</label>
-          <select style="background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--areia);font-family:var(--body);font-size:16px;padding:12px 0;letter-spacing:.04em;outline:none">
+          <select name="subject" style="background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--areia);font-family:var(--body);font-size:16px;padding:12px 0;letter-spacing:.04em;outline:none">
             <option style="background:var(--jenipapo)">Alianza institucional</option>
             <option style="background:var(--jenipapo)">Diálogo con comunidad guardiana</option>
             <option style="background:var(--jenipapo)">Investigación académica</option>
@@ -1716,7 +1582,7 @@
             <option style="background:var(--jenipapo)">Otro</option>
           </select>
         </div>
-        <div class="field"><label>¿Cómo podemos colaborar?</label><textarea placeholder="Cuéntenos brevemente su propuesta, duda o pedido."></textarea></div>
+        <div class="field"><label>¿Cómo podemos colaborar?</label><textarea name="message" placeholder="Cuéntenos brevemente su propuesta, duda o pedido."></textarea></div>
         <button type="submit" class="btn primary" style="align-self:flex-start">Enviar mensaje</button>
       </form>
 
@@ -1759,10 +1625,8 @@
         <h6>Institucional</h6>
         <ul>
           <li><a href="#quem">Quiénes somos</a></li>
-          <li><a href="#nome">El nombre</a></li>
           <li><a href="#manifesto">Manifiesto</a></li>
           <li><a href="#pmv">Propósito · Misión · Visión</a></li>
-          
         </ul>
       </div>
       <div class="ft-col">
@@ -1778,8 +1642,6 @@
       <div class="ft-col">
         <h6>Recursos</h6>
         <ul>
-          <li><a href="brand-book.html">Brand book visual</a></li>
-          <li><a href="brand-book-institucional.html">Brand book institucional</a></li>
           <li><a href="#contato">Contacto</a></li>
           <li><a href="#">Prensa</a></li>
           <li><a href="#">Carreras</a></li>
@@ -1798,6 +1660,7 @@
 </div>
 <script src="js/reveal.js" defer></script>
 <script src="js/nav.js" defer></script>
+<script src="js/contact-form.js" defer></script>
 <script src="js/i18n.js" defer></script>
 </body>
 </html>
